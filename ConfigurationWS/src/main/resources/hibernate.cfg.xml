@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+     	
+          <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		  <property name="hibernate.connection.url">jdbc:oracle:thin:@3scapedb.dev.idc1.level3.com:1521:escpdev1</property>
+		  <property name="hibernate.connection.username">vcli</property>
+		  <property name="hibernate.connection.password">vcli</property>
+		  <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		  <property name="show_sql">true</property>
+<!--      	<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property> -->
+<!--         <property name="hibernate.connection.url">jdbc:oracle:thin:@f11bb33-09.idc1.level3.com:1522:vclienv1</property> -->
+<!--         <property name="hibernate.connection.username">vcli</property> -->
+<!--         <property name="hibernate.connection.password">vcli</property> -->
+<!--         <property name="connection.pool_size">1</property> -->
+<!--          <property name="hibernate.dialect"> org.hibernate.dialect.HSQLDialect</property> -->
+<!--   <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property> -->
+     
+<!--         <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JTATransactionFactory</property> -->
+<!-- 		<property name="hibernate.transaction.auto_close_session">true</property> -->
+     
+<!--    		<property name="hibernate.jta.UserTransaction">javax.transaction.UserTransaction</property> -->
+          
+        
+<!--    		<property name="hibernate.cache.use_second_level_cache">false</property> -->
+<!-- 		<property name="hibernate.cache.use_query_cache">false</property> -->
+    
+<!-- 		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property> -->
+<!--         <property name="hibernate.cache.provider_class">org.hibernate.cache.EhCacheProvider</property> -->
+<!--         --> 
+<!--         <property name="hibernate.cache.provider_class">org.hibernate.cache.HashtableCacheProvider</property> -->
+        
+<!--         TODO - fix DataSource InitialContext error -->
+<!--         <property name="hibernate.connection.datasource">java:jboss/vcliDS</property> --> 
+      
+<!--         <property name="hibernate.connection.datasource">java:/comp/env/jdbc/cdc_datasource</property> -->
+<!--         java:jboss/vcliDS -->
+<!--         --> 
+             
+<!--         <property name="hibernate.current_session_context_class">thread</property> -->
+<!--         <property name="hibernate.search.autoregister_listeners">false</property> -->
+<!--         <property name="hibernate.show_sql">true</property> -->
+        
+        <!-- mappings -->
+   		<mapping class="com.level3.entity.Criteria"/>
+   		<mapping class="com.level3.entity.CriteriaAttribute"/>
+   		<mapping class="com.level3.entity.CriteriaAttributeName"/>
+   		<mapping class="com.level3.entity.CriteriaAttributeValue"/>
+   		<mapping class="com.level3.entity.CriteriaAttributeValueMatchType"/>
+   		<mapping class="com.level3.entity.CriteriaAttributeValueMatchValue"/>
+   		<mapping class="com.level3.entity.Configuration"/>
+
+   		
+    </session-factory>
+</hibernate-configuration>

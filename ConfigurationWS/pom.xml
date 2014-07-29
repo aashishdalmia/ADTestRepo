@@ -1,0 +1,182 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.level3.config</groupId>
+  <artifactId>ConfigurationWS</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <packaging>war</packaging>
+
+  <properties>
+  		<version.servlet>2.5</version.servlet>
+		<version.log4j>1.2.16</version.log4j>
+		<version.junit>4.10</version.junit>
+		<version.slf4j>1.6.4</version.slf4j>		
+		<version.javassist>3.15.0-GA</version.javassist>
+		<version.jpa>1.0.1.Final</version.jpa>
+		<version.hibernate>4.0.1.Final</version.hibernate>
+		<version.hibernate.validator>4.0.1.GA</version.hibernate.validator>		
+ 		<version.velocity>1.7</version.velocity> 
+		<version.resteasy>2.3.2.Final</version.resteasy>
+		<model.mapper.version>0.6.2</model.mapper.version>
+  </properties>
+
+  <repositories>
+	<repository>
+		<id>JBoss repository</id>
+		<url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+	</repository>
+  </repositories>
+
+  <dependencies>   
+	<dependency>
+		<groupId>javax.servlet</groupId>
+		<artifactId>servlet-api</artifactId>
+		<version>${version.servlet}</version>
+		<scope>provided</scope>
+	</dependency>
+  	<dependency>
+		<groupId>javax.inject</groupId>
+		<artifactId>javax.inject</artifactId>
+		<version>1</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>log4j</groupId>
+		<artifactId>log4j</artifactId>
+		<version>${version.log4j}</version>
+<!-- 		<scope>provided</scope> -->
+	</dependency>
+	<dependency>
+		<groupId>org.slf4j</groupId>
+		<artifactId>slf4j-log4j12</artifactId>
+		<version>${version.slf4j}</version>
+	</dependency>
+    <dependency>
+	    <groupId>junit</groupId>
+	    <artifactId>junit</artifactId>
+	    <version>4.8.2</version>
+	    <scope>test</scope>
+    </dependency>
+    
+<!--     <dependency> -->
+<!-- 		<groupId>org.hibernate</groupId> -->
+<!-- 		<artifactId>hibernate-ehcache</artifactId> -->
+<!-- 		<version>${version.hibernate}</version> -->
+<!-- 	</dependency> -->
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-core</artifactId>
+		<version>${version.hibernate}</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-envers</artifactId>
+		<version>${version.hibernate}</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-entitymanager</artifactId>
+		<version>${version.hibernate}</version>
+		<scope>provided</scope>
+	</dependency>	
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-validator</artifactId>
+		<version>${version.hibernate.validator}</version>
+		<scope>provided</scope>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate.common</groupId>
+		<artifactId>hibernate-commons-annotations</artifactId>
+		<version>4.0.1.Final</version>
+		<scope>provided</scope> 
+	</dependency>
+	
+	<dependency>
+		<groupId>org.hibernate.javax.persistence</groupId>
+		<artifactId>hibernate-jpa-2.0-api</artifactId>
+		<version>${version.jpa}</version>
+	</dependency>
+	<dependency>
+		<groupId>org.hibernate</groupId>
+		<artifactId>hibernate-annotations</artifactId>
+		<version>3.4.0.GA</version>
+<!--  		<scope>provided</scope>  -->
+	</dependency>
+		
+   <!-- RESTEasy dependencies -->		
+	   <dependency>
+	      <groupId>org.jboss.resteasy</groupId>
+	      <artifactId>resteasy-jaxrs</artifactId>
+		  <version>${version.resteasy}</version>
+		  <scope>provided</scope>
+	   </dependency>
+	   <dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jsapi</artifactId>
+			<version>${version.resteasy}</version>
+			<scope>provided</scope>
+		</dependency>
+	    <dependency>
+			<groupId>org.jboss.resteasy</groupId>
+			<artifactId>resteasy-jackson-provider</artifactId> 
+			<version>${version.resteasy}</version>
+			<scope>provided</scope>
+	  </dependency>
+	  <dependency>
+		      <groupId>org.jboss.resteasy</groupId>
+		      <artifactId>resteasy-jaxb-provider</artifactId>
+			  <version>${version.resteasy}</version>
+		  	  <scope>provided</scope>
+	  </dependency>
+	  <dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-multipart-provider</artifactId>
+		<version>${version.resteasy}</version>
+		<scope>provided</scope>
+	  </dependency>
+	  <dependency>
+		<groupId>org.jboss.resteasy</groupId>
+		<artifactId>resteasy-cdi</artifactId>
+		<version>${version.resteasy}</version>
+		<scope>provided</scope>
+	  </dependency>
+
+  <!-- End RestEasy api dependency -->
+  
+    <dependency>
+		<groupId>org.apache.velocity</groupId>
+		<artifactId>velocity</artifactId>
+		<version>${version.velocity}</version>
+	</dependency>
+	
+	<dependency>
+			<groupId>org.modelmapper</groupId>
+			<artifactId>modelmapper</artifactId>
+			<version>${model.mapper.version}</version>
+	</dependency>
+	
+		
+</dependencies> 
+  
+<build>
+  		<plugins>
+  			<plugin>
+				<artifactId>maven-war-plugin</artifactId>
+				<version>2.3</version>
+				<configuration>
+					<warSourceDirectory>WebContent</warSourceDirectory>
+					<failOnMissingWebXml>false</failOnMissingWebXml>
+				</configuration>
+			</plugin>
+  	</plugins>  	
+  	<resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+  </build>  
+  
+</project>

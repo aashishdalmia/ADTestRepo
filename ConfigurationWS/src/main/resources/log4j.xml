@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC  "-//APACHE//DTD LOG4J 1.2//EN" "http://logging.apache.org/log4j/1.2/apidocs/org/apache/log4j/xml/doc-files/log4j.dtd">
+<log4j:configuration>
+	<appender name="stdout" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="%d{ABSOLUTE} %5p [%t] %c:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<appender name="app" class="org.apache.log4j.RollingFileAppender">
+		<!-- The active file to log to -->
+		<param name="file" value="/log/ConfigurationWS.log" />
+		<param name="append" value="true" />
+		<param name="encoding" value="UTF-8" />
+
+		<param name="MaxFileSize" value="100000KB" />
+		<param name="MaxBackupIndex" value="10" />
+
+		<layout class="org.apache.log4j.PatternLayout">
+			<!-- The log message pattern -->
+			<param name="ConversionPattern" value="%d{ISO8601} %5p [%t] %c:%L - %m%n" />
+		</layout>
+	</appender>
+
+	<logger name="com.level3">
+		<level value="debug" />
+	</logger>
+
+	<logger name="org.apache.ibatis">
+		<level value="warn" />
+	</logger>
+
+	<root>
+		<priority value="info"></priority>
+		<appender-ref ref="stdout" />
+		<appender-ref ref="app" />
+	</root>
+</log4j:configuration>
