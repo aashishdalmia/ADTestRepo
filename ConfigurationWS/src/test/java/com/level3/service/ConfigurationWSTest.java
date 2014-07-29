@@ -42,7 +42,7 @@ public class ConfigurationWSTest {
 	private static CriteriaAttributeValueDO cav;
 	private static IConfigurationWS confWSImpl;
 	private Response response;
-	
+	//testing git
 	//TODO - getServer hostname dynamically otherwise this test will fail in Dev, QA etc
 	//TODO - Add few more asserts in your test method
 //	@Inject
